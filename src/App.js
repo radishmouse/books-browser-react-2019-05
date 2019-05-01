@@ -20,9 +20,11 @@ class App extends React.Component {
         <Route render={(props) => (
           <BookList {...props} books={Object.keys(this.state.bookInfo)}/>
         )} />
-        <Route path="/books/:id" render={(props) => (
-          <BookDetails {...props} details={this.state.bookInfo}/>
-        )} />
+        <Route path="/books/:id" render={(props) => {
+          let id = props.match.params.id;          
+          return <BookDetails {...props} book={id} details={this.state.bookInfo[id]}/>
+        }}
+        />
       </div>
     );
   }  
