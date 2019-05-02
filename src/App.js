@@ -22,7 +22,7 @@ class App extends React.Component {
         )} />
         <Route path="/books/:id" render={(props) => {
           let id = props.match.params.id;          
-          return <BookDetails {...props} book={id} details={this.state.bookInfo[id]}/>
+          return <BookDetails {...props} title={id} details={this.state.bookInfo[id]}/>
         }}
         />
       </div>
